@@ -1,0 +1,297 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-50 text-gray-900 antialiased;
+  }
+
+  /* 自定义滚动条 */
+  ::-webkit-scrollbar {
+    @apply w-2 h-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-400;
+  }
+}
+
+@layer components {
+  /* 按钮样式 */
+  .btn {
+    @apply inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500 shadow-sm hover:shadow-md;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-gray-700 border border-gray-300 hover:bg-gray-50 focus:ring-blue-500 shadow-sm hover:shadow-md;
+  }
+
+  .btn-ghost {
+    @apply text-gray-600 hover:text-gray-900 hover:bg-gray-100 focus:ring-gray-500;
+  }
+
+  .btn-danger {
+    @apply bg-red-600 text-white hover:bg-red-700 focus:ring-red-500 shadow-sm hover:shadow-md;
+  }
+
+  .btn-sm {
+    @apply px-3 py-1.5 text-xs;
+  }
+
+  .btn-lg {
+    @apply px-6 py-3 text-base;
+  }
+
+  /* 卡片样式 */
+  .card {
+    @apply bg-white rounded-xl shadow-sm border border-gray-200;
+  }
+
+  .card-hover {
+    @apply hover:shadow-lg transition-shadow duration-200;
+  }
+
+  .task-card {
+    @apply bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-all duration-200 p-4 cursor-pointer;
+  }
+
+  /* 优先级样式 */
+  .priority-high {
+    @apply text-red-700 bg-red-50 border-red-200;
+  }
+
+  .priority-medium {
+    @apply text-yellow-700 bg-yellow-50 border-yellow-200;
+  }
+
+  .priority-low {
+    @apply text-green-700 bg-green-50 border-green-200;
+  }
+
+  /* 截止日期样式 */
+  .deadline-overdue {
+    @apply text-red-600 bg-red-50 border border-red-200;
+  }
+
+  .deadline-soon {
+    @apply text-yellow-600 bg-yellow-50 border border-yellow-200;
+  }
+
+  .deadline-normal {
+    @apply text-green-600 bg-green-50 border border-green-200;
+  }
+
+  /* 输入框样式 */
+  .input {
+    @apply block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm transition-colors duration-200;
+  }
+
+  .input-error {
+    @apply border-red-300 focus:ring-red-500 focus:border-red-500;
+  }
+
+  /* 模态框样式 */
+  .modal-overlay {
+    @apply fixed inset-0 bg-gray-500 bg-opacity-75 backdrop-blur-sm transition-opacity duration-300;
+  }
+
+  .modal-content {
+    @apply bg-white rounded-xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-hidden;
+  }
+
+  /* 日历样式 */
+  .calendar-day {
+    @apply border border-gray-200 min-h-[100px] p-2 transition-all duration-200;
+  }
+
+  .calendar-day:hover {
+    @apply bg-gray-50 border-gray-300;
+  }
+
+  .calendar-day-today {
+    @apply bg-blue-50 border-blue-500;
+  }
+
+  .calendar-day-other-month {
+    @apply bg-gray-50 text-gray-400;
+  }
+
+  /* 看板列样式 */
+  .kanban-column {
+    @apply bg-gray-50 rounded-xl p-4 min-h-[500px];
+  }
+
+  .kanban-header {
+    @apply flex items-center justify-between mb-4 pb-3 border-b border-gray-200;
+  }
+
+  /* 徽章样式 */
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .badge-primary {
+    @apply bg-blue-100 text-blue-800;
+  }
+
+  .badge-success {
+    @apply bg-green-100 text-green-800;
+  }
+
+  .badge-warning {
+    @apply bg-yellow-100 text-yellow-800;
+  }
+
+  .badge-danger {
+    @apply bg-red-100 text-red-800;
+  }
+
+  .badge-gray {
+    @apply bg-gray-100 text-gray-800;
+  }
+
+  /* 导航样式 */
+  .nav-link {
+    @apply flex items-center px-3 py-2 text-sm font-medium rounded-lg transition-colors duration-200;
+  }
+
+  .nav-link-active {
+    @apply bg-blue-50 text-blue-700;
+  }
+
+  .nav-link-inactive {
+    @apply text-gray-600 hover:text-gray-900 hover:bg-gray-50;
+  }
+
+  /* 工具提示样式 */
+  .tooltip {
+    @apply absolute z-10 px-2 py-1 text-xs text-white bg-gray-900 rounded shadow-lg opacity-0 pointer-events-none transition-opacity duration-200;
+  }
+
+  /* 加载动画 */
+  .loading-spinner {
+    @apply animate-spin rounded-full border-2 border-gray-300 border-t-blue-600;
+  }
+
+  /* 渐变背景 */
+  .gradient-bg {
+    @apply bg-gradient-to-r from-blue-500 to-purple-600;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent;
+  }
+
+  /* 卡片悬停效果增强 */
+  .card-hover:hover {
+    @apply shadow-lg transform -translate-y-1;
+  }
+
+  /* 任务卡片增强效果 */
+  .task-card:hover {
+    @apply shadow-lg border-gray-300 transform -translate-y-0.5;
+  }
+
+  /* 主内容区域间距 */
+  .main-content {
+    @apply max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8;
+  }
+
+  /* 按钮悬停效果增强 */
+  .btn:hover {
+    @apply transform scale-105;
+  }
+
+  .btn:active {
+    @apply transform scale-95;
+  }
+
+  /* 统计数字动画效果 */
+  @keyframes countUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .count-animation {
+    animation: countUp 0.6s ease-out;
+  }
+
+  /* 页面进入动画 */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .fade-in-up {
+    animation: fadeInUp 0.5s ease-out;
+  }
+
+  /* 统计卡片脉冲效果 */
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.8;
+    }
+  }
+
+  .pulse-animation {
+    animation: pulse 2s infinite;
+  }
+
+  /* 任务卡片进入动画 */
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .slide-in-left {
+    animation: slideInLeft 0.3s ease-out;
+  }
+
+  /* 徽章闪烁效果 */
+  @keyframes badgeGlow {
+    0%, 100% {
+      box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 0 8px rgba(239, 68, 68, 0);
+    }
+  }
+
+  .badge-glow {
+    animation: badgeGlow 2s infinite;
+  }
+}
